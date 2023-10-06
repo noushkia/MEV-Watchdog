@@ -1,0 +1,9 @@
+aiohttp==3.8.5
+hexbytes==0.3.1
+pydantic==1.9.2
+requests==2.31.0
+web3==5.30.0
+numpy==1.26.0
+pandas~=2.1.1
+SQLAlchemy~=2.0.5.post1
+psycopg2
