@@ -28,12 +28,6 @@ formatter = logging.Formatter('%(asctime)s %(levelname)s:%(message)s')
 AsyncEth.trace_block = trace_block
 AsyncEth.get_block_receipts = get_block_receipts
 
-database_path = Path(config['paths']['database_path'])
-protocols_data_path = database_path / config['paths']['protocols_data_path']
-token_ins_data_path = database_path / config['paths']['token_ins_data_path']
-token_outs_data_path = database_path / config['paths']['token_outs_data_path']
-addresses_data_path = database_path / config['paths']['addresses_data_path']
-
 
 def _get_last_inspected_block(session: Session, after_block: int, before_block: int) -> int:
     """

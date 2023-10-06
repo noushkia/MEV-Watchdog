@@ -14,13 +14,6 @@ config.read('config.ini')
 # rpc ips file path
 rpc_ips_path = config['paths']["rpc_hosts_ip_path"]
 
-# load data file paths
-database_path = Path(config['paths']['database_path'])
-addresses_data_path = database_path / config['paths']['addresses_data_path']
-protocols_data_path = database_path / config['paths']['protocols_data_path']
-token_ins_data_path = database_path / config['paths']['token_ins_data_path']
-token_outs_data_path = database_path / config['paths']['token_outs_data_path']
-
 # load log paths
 logs_path = Path(config["logs"]["logs_path"])
 inspectors_log_path = logs_path / config["logs"]["inspectors_log_path"]
@@ -36,13 +29,13 @@ def get_rpcs(file_path):
 
 
 if __name__ == "__main__":
-    create_dirs(database_path, addresses_data_path, protocols_data_path, token_ins_data_path, token_outs_data_path,
-                logs_path, inspectors_log_path)
+    create_dirs(logs_path, inspectors_log_path)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', '--after', type=int, help='Block number to start from')
     parser.add_argument('-b', '--before', type=int, help='Block number to end with')
-    parser.add_argument('-p', '--para', type=int, help='Maximum number of parallel processes/inspectors', default=cpu_count())
+    parser.add_argument('-p', '--para', type=int, help='Maximum number of parallel processes/inspectors',
+                        default=cpu_count())
     args = parser.parse_args()
 
     inspector_cnt = args.para
