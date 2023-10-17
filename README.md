@@ -99,14 +99,14 @@ The results are then stored in the PostgreSQL database.
 In order to inspect a given range of blocks, run the following command:
 
 ```bash
-  python mev_inspect/inspector.py -a START_BLOCK_RANGE -b END_BLOCK_RANGE
+  python inspect_many.py -a START_BLOCK_RANGE -b END_BLOCK_RANGE
 ```
 
 The inspector by default starts up as many processes as the number of available cpu cores.
 You can specify the number of processes to start up by using the -p flag:
 
 ```bash
-  python mev_inspect/inspector.py -a START_BLOCK_RANGE -b END_BLOCK_RANGE -p NUMBER_OF_PROCESSES
+  python inspect_many.py -a START_BLOCK_RANGE -b END_BLOCK_RANGE -p NUMBER_OF_PROCESSES
 ```
 
 The inspector creates a log file named inspector.log in the logs directory.
